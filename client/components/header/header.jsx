@@ -30,7 +30,9 @@ const header = () => {
       
       <nav className="header-nav">
         <div className="header-logo-container">
-          <img className="header-logo" src={Logo} alt="logo" />
+          <NavLink to="/">
+            <img className="header-logo" src={Logo} alt="logo" />
+          </NavLink>
         </div>
         <ul className="middle-header">
           <li>
