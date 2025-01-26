@@ -26,7 +26,8 @@ nav ul li a {
     text-decoration: none;
     color: #0e2a3a;
     font-weight: bold;
-    padding: 10px 15px;
+    padding: 8px 15px;
+    font-size: .9rem;
     border-radius: .5rem;
     transition: all .3s ease-in-out;
 }
@@ -37,7 +38,90 @@ nav ul li a.active {
 }
 
 nav ul li a:hover {
-    background-color: #21415a;
-    color: white;
-    opacity: .7;
+    border: 1px solid #21415a;
+    background-color: #fff;
+    color: #21415a;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mid-right-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    border-radius: 1rem;
+    background-color: #0e2a3a;
+    transition: all.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #menu.open {
+        display: flex;
+    }
+
+    .mid-right-header {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        border: #0e2a3a 1px solid;
+        flex-direction: column;
+        gap: 0px;
+        position: fixed;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        backdrop-filter: blur(20px);
+    }
+
+    .middle-header {
+        flex-direction: column;
+        padding: 10px 0;
+        width: 100%; 
+        border-bottom: #0e2a3a 1px solid;
+    }
+
+    .right-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    nav ul {
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li .NavLink {
+        width: 80%;
+    }
 }
