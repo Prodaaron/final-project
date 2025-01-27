@@ -7,12 +7,14 @@ import Products from "../pages/products.jsx";
 import About from "../pages/about.jsx";
 import Signup from "../pages/signup.jsx";
 import Login from "../pages/login.jsx";
+import Footer from "../components/footer/footer.jsx";
 
 function App() {
   return (
     <>
       <Router>
         <Header />
+
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,6 +23,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+
+        <Footer />
       </Router>
     </>
   );
