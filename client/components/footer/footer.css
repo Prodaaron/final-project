@@ -131,3 +131,21 @@ footer hr {
     color: #21415a;
     text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+    footer {
+        display: flex;
+        align-items: center;
+    }
+    .footer-top-right {
+        display: none;
+    }
+
+    .footer-bottom-left span {
+        display: none;
+    }
+
+    .footer-bottom {
+        font-size: .8rem;
+    }
+}

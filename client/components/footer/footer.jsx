@@ -115,7 +115,7 @@ const footer = () => {
               <p>
                 &copy; 
                 
-                MesArg Shampoo & Conditioner 2024. All rights reserved.
+                MesArg <span>Shampoo & Conditioner</span> 2024. <span>All rights reserved.</span> 
               </p>
             </div>
 
