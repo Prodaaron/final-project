@@ -4,6 +4,11 @@
     justify-content: space-between;
     padding: 0px 10px;
     border-bottom: 1px solid #0e2a3a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
 }
 
 .header-logo {
