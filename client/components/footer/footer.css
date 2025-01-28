@@ -1,0 +1,133 @@
+footer {
+    border-top: 1px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    color: #21415a;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-links {
+    display: flex;
+    padding: 20px 0;
+    gap: 30px;
+}
+
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links div a {
+    color: #0e2a3a;
+    margin: 5px 0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links div a:hover {
+    color: #21415a;
+    text-decoration: underline;
+}
+
+.social-media-footer {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.social-media-footer a img {
+    width: 30px;
+    height: 30px;
+}
+
+.basic-contact-info a {
+    color: #21415a;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.basic-contact-info a:hover {
+    color: #21415a;
+    text-decoration: underline;
+}
+
+.subscription-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.subscription-footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #21415a;
+    font-size: 14px;
+    text-align: center;
+    gap: 10px;
+    width: 300px;
+    border: #21415a 1px solid;
+    padding: 20px;
+    border-radius: 1rem;
+}
+
+.subscription-footer form input {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #21415a;
+    border-radius: 5px;
+}
+
+.subscription-footer form button {
+    padding: 10px 20px;
+    width: 88%;
+    background-color: #21415a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subscription-footer form button:hover {
+    background-color: #1e3a50;
+}
+
+footer hr {
+    margin: 30px 0 0 0;
+    border: none;
+    border-top: 1px solid #21415a;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: #21415a;
+}
+
+.footer-logo {
+    width: 20px;
+}
+
+
+.footer-bottom-right a {
+    color: #21415a;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0 8px;
+}
+
+.footer-bottom-right a:hover {
+    color: #21415a;
+    text-decoration: underline;
+}
