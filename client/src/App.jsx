@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../components/header/header.jsx";
@@ -9,24 +9,33 @@ import Signup from "../pages/signup.jsx";
 import Login from "../pages/login.jsx";
 import Footer from "../components/footer/footer.jsx";
 
-function App() {
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    setIsLoggedIn(false);
+  };
+
   return (
-    <>
-      <Router>
-        <Header />
+    <Router>
+      <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+      </Routes>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-
-        <Footer />
-      </Router>
-    </>
+      <Footer />
+    </Router>
   );
 }
 
