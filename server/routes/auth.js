@@ -14,7 +14,7 @@ router.post("/signup", async (req, res) => {
 
     // Check if user already exists (by email or username)
     const userCheck = await pool.query(
-      "SELECT * FROM users WHERE email = $1 OR username = $2",
+      "SELECT * FROM user_auth WHERE email = $1 OR username = $2",
       [email, username]
     );
 
@@ -28,9 +28,13 @@ router.post("/signup", async (req, res) => {
 
     // Insert user into DB
     const newUser = await pool.query(
-      "INSERT INTO users (first_name, last_name, username, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING id, first_name, last_name, username, email",
+      "INSERT INTO user_auth (first_name, last_name, username, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING user_id, first_name, last_name, username, email",
       [first_name, last_name, username, email, hashedPassword]
     );
+
+    if(newUser.rowa[0].user_id === 1) {
+      await pool.query("UPDATE user_auth SET role = 'admin' WHERE user_id = 1");
+    }
 
     res.status(201).json({ message: "User registered successfully", user: newUser.rows[0] });
   } catch (error) {
@@ -44,7 +48,7 @@ router.post("/login", async (req, res) => {
     const { username, password } = req.body;
 
     // Find user by username
-    const user = await pool.query("SELECT * FROM users WHERE username = $1", [username]);
+    const user = await pool.query("SELECT * FROM user_auth WHERE username = $1", [username]);
     if (user.rows.length === 0) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
@@ -57,7 +61,7 @@ router.post("/login", async (req, res) => {
 
     // Generate JWT token
     const token = jwt.sign(
-      { userId: user.rows[0].id, username: user.rows[0].username },
+      { userId: user.rows[0].user_id, username: user.rows[0].username, role: user.rows[0].role },
       JWT_SECRET,
       { expiresIn: "1h" }
     );
