@@ -8,7 +8,8 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: #fff;
+    /* background-color: #fff; */
+    backdrop-filter: blur(20px);
 }
 
 .header-logo {
