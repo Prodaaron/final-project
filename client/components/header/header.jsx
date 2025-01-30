@@ -66,7 +66,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
             </>
           ) : (
             <li>
-              <button onClick={onLogout}>Logout</button>
+              <button className="logout-btn" onClick={onLogout}>Logout</button>
             </li>
           )}
         </ul>

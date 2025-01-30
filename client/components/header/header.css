@@ -75,7 +75,21 @@ nav ul li a:hover {
     height: 3px;
     border-radius: 1rem;
     background-color: #0e2a3a;
-    transition: all.3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.logout-btn {
+    border: 1px solid #681b1b;
+    color: #681b1b;
+    padding: 8px 15px;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.logout-btn:hover {
+    background-color: #681b1b;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {
