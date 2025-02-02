@@ -3,15 +3,13 @@ import Logo from "../../src/assets/images/logo/mesarg-logo-favico.ico";
 import "./header.css";
 import { NavLink } from "react-router-dom";
 
-const Header = ({ isLoggedIn, onLogout }) => {
+const Header = ({ isLoggedIn, role, onLogout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [role, setRole] = useState(null);
 
-  // Update the role whenever isLoggedIn changes
+  // If you want to log the role change, you can use an effect:
   useEffect(() => {
-    const storedRole = localStorage.getItem("role");
-    setRole(storedRole);
-  }, [isLoggedIn]);
+    console.log("Header received role:", role);
+  }, [role]);
 
   // Close menu when clicking outside of it
   useEffect(() => {
@@ -26,7 +24,8 @@ const Header = ({ isLoggedIn, onLogout }) => {
     };
 
     document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
+    return () =>
+      document.removeEventListener("click", handleClickOutside);
   }, [isMenuOpen]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -64,7 +63,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
               About
             </NavLink>
           </li>
-          {/* Render the Admin Dashboard link if the role is "admin" */}
+          {/* Render the Admin Dashboard link if role === "admin" */}
           {role === "admin" && (
             <li>
               <NavLink to="/admin-dashboard" onClick={closeMenuOnLinkClick}>

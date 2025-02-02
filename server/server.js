@@ -1,13 +1,17 @@
 const express = require("express");
 const cors = require("cors");
-const { router: authRoutes } = require("./routes/auth");
 require("dotenv").config();
+const { router: authRoutes } = require("./routes/auth"); // existing auth routes
+const newsletterRoutes = require("./routes/newsletter");  // import your newsletter route
 
 const app = express();
+
 app.use(express.json());
 app.use(cors());
 
-app.use("/auth", authRoutes); // Use auth routes
+// Use your routes
+app.use("/auth", authRoutes);
+app.use("/", newsletterRoutes); // This will add the /newsletter-subscribe endpoint
 
 app.get("/", (req, res) => {
   res.send("API is running...");
