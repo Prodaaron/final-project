@@ -17,7 +17,11 @@ function Login({ setIsLoggedIn }) {
 
     try {
       const res = await axios.post("http://localhost:5000/auth/login", formData);
+      
+      // Store token and role in localStorage
       localStorage.setItem("authToken", res.data.token);
+      localStorage.setItem("role", res.data.role);
+      
       setIsLoggedIn(true);
       navigate("/");
     } catch (err) {

@@ -4,7 +4,14 @@ import "./header.css";
 import { NavLink } from "react-router-dom";
 
 const Header = ({ isLoggedIn, onLogout }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Track menu state
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [role, setRole] = useState(null);
+
+  // Update the role whenever isLoggedIn changes
+  useEffect(() => {
+    const storedRole = localStorage.getItem("role");
+    setRole(storedRole);
+  }, [isLoggedIn]);
 
   // Close menu when clicking outside of it
   useEffect(() => {
@@ -23,7 +30,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
   }, [isMenuOpen]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenuOnLinkClick = () => setIsMenuOpen(false); // Close on link click
+  const closeMenuOnLinkClick = () => setIsMenuOpen(false);
 
   return (
     <nav className="header-nav">
@@ -43,14 +50,28 @@ const Header = ({ isLoggedIn, onLogout }) => {
       <div id="menu" className={`mid-right-header ${isMenuOpen ? "open" : ""}`}>
         <ul className="middle-header">
           <li>
-            <NavLink to="/" onClick={closeMenuOnLinkClick}>Home</NavLink>
+            <NavLink to="/" onClick={closeMenuOnLinkClick}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/products" onClick={closeMenuOnLinkClick}>Products</NavLink>
+            <NavLink to="/products" onClick={closeMenuOnLinkClick}>
+              Products
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about" onClick={closeMenuOnLinkClick}>About</NavLink>
+            <NavLink to="/about" onClick={closeMenuOnLinkClick}>
+              About
+            </NavLink>
           </li>
+          {/* Render the Admin Dashboard link if the role is "admin" */}
+          {role === "admin" && (
+            <li>
+              <NavLink to="/admin-dashboard" onClick={closeMenuOnLinkClick}>
+                Admin Dashboard
+              </NavLink>
+            </li>
+          )}
         </ul>
 
         {/* Authentication Links */}
@@ -58,15 +79,21 @@ const Header = ({ isLoggedIn, onLogout }) => {
           {!isLoggedIn ? (
             <>
               <li>
-                <NavLink to="/signup" onClick={closeMenuOnLinkClick}>Sign Up</NavLink>
+                <NavLink to="/signup" onClick={closeMenuOnLinkClick}>
+                  Sign Up
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/login" onClick={closeMenuOnLinkClick}>Login</NavLink>
+                <NavLink to="/login" onClick={closeMenuOnLinkClick}>
+                  Login
+                </NavLink>
               </li>
             </>
           ) : (
             <li>
-              <button className="logout-btn" onClick={onLogout}>Logout</button>
+              <button className="logout-btn" onClick={onLogout}>
+                Logout
+              </button>
             </li>
           )}
         </ul>

@@ -26,15 +26,18 @@ router.post("/signup", async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
+    // Determine user role (first user = admin)
+    let role = "user";
+    const userCount = await pool.query("SELECT COUNT(*) FROM user_auth");
+    if (parseInt(userCount.rows[0].count) === 0) {
+      role = "admin";
+    }
+
     // Insert user into DB
     const newUser = await pool.query(
-      "INSERT INTO user_auth (first_name, last_name, username, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING user_id, first_name, last_name, username, email",
-      [first_name, last_name, username, email, hashedPassword]
+      "INSERT INTO user_auth (first_name, last_name, username, email, password, role) VALUES ($1, $2, $3, $4, $5, $6) RETURNING user_id, first_name, last_name, username, email, role",
+      [first_name, last_name, username, email, hashedPassword, role]
     );
-
-    if(newUser.rowa[0].user_id === 1) {
-      await pool.query("UPDATE user_auth SET role = 'admin' WHERE user_id = 1");
-    }
 
     res.status(201).json({ message: "User registered successfully", user: newUser.rows[0] });
   } catch (error) {
@@ -66,7 +69,7 @@ router.post("/login", async (req, res) => {
       { expiresIn: "1h" }
     );
 
-    res.status(200).json({ message: "Login successful", token });
+    res.status(200).json({ message: "Login successful", token, role: user.rows[0].role });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
