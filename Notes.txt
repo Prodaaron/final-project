@@ -1,4 +1,3 @@
 ** Known Problems **
-- 1. The Database connection!
-potentially property info (username, db or password)
-"Important!"
+- 1. backend not fetching the newsletter subscribers from database
+"semi-Important!"

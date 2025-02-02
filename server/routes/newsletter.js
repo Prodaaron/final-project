@@ -33,4 +33,15 @@ router.post("/newsletter-subscribe", async (req, res) => {
   }
 });
 
+router.get("/subscribers", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM newsletter_subscription ORDER BY id DESC");
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error("Error fetching subscribers:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
 module.exports = router;
