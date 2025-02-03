@@ -14,7 +14,7 @@ app.use(cors());
 // Use your routes
 app.use("/auth", authRoutes);
 app.use("/", newsletterRoutes); // This will add the /newsletter-subscribe endpoint
-app.use("/api", newsletterRoutes);
+app.use("/subscribers", newsletterRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running...");

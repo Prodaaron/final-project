@@ -8,7 +8,8 @@ const adminDashboard = () => {
   useEffect(() => {
     const fetchSubscribers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/newsletter-subscribe/subscribers");
+        const response = await axios.get("http://localhost:5000/subscribers");
+        console.log(response.data);
         setSubscribers(response.data);
       } catch (error) {
         console.error("Error fetching subscribers:", error);
@@ -32,8 +33,8 @@ const adminDashboard = () => {
         </thead>
         <tbody>
           {subscribers.map((subscriber) => (
-            <tr key={subscriber.id}>
-              <td>{subscriber.id}</td>
+            <tr key={subscriber.subscriber_id}>
+              <td>{subscriber.subscriber_id}</td>
               <td>{subscriber.subscriber_name}</td>
               <td>{subscriber.subscriber_email}</td>
               <td>{new Date(subscriber.subscribed_at).toLocaleString()}</td>
