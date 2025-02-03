@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './css/signup.css';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -33,9 +34,10 @@ const Signup = () => {
 
   return (
     <div className="auth-container">
-      <h2>Sign Up</h2>
-      {error && <p className="error">{error}</p>}
+      
       <form onSubmit={handleSubmit}>
+        <h2>Sign Up</h2>
+        {error && <p className="error">{error}</p>}
         <input type="text" name="first_name" placeholder="First Name" onChange={handleChange} required />
         <input type="text" name="last_name" placeholder="Last Name" onChange={handleChange} required />
         <input type="text" name="username" placeholder="Username" onChange={handleChange} required />

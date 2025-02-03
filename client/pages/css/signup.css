@@ -1,0 +1,63 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../src/assets/images/thumbnails/signup.webp);
+    background-size: cover;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 30%;
+    border: 1px solid #0e2a3a;
+    margin: 30px auto;
+    padding-bottom: 20px;
+    backdrop-filter: blur(50px);
+    border-radius: 1rem;
+
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px #0e2a3a;
+}
+
+.auth-container form input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #0e2a3a;
+    color: #0e2a3a;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    
+}
+
+.auth-container form button {
+    width: 85%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px;
+    background-color: #0e2a3a;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-container form button:hover {
+    background-color: #1e3a50;
+}
+
+.error {
+    color: rgb(117, 11, 11);
+    margin-top: 5px;
+    text-align: center;
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .auth-container form {
+        width: 90%;
+    }
+}

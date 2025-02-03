@@ -8,6 +8,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10;
     /* background-color: #fff; */
     backdrop-filter: blur(20px);
 }
@@ -104,6 +105,7 @@ nav ul li a:hover {
 
     #menu.open {
         display: flex;
+        background-color: #fff;
     }
 
     .mid-right-header {
