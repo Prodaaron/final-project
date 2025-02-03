@@ -17,11 +17,18 @@ const adminDashboard = () => {
     };
 
     fetchSubscribers();
+
+    const refreshSubscribers = document.querySelector('#newsletter-title')
+
+    refreshSubscribers.addEventListener("click", () => {
+      fetchSubscribers();
+      console.log("Subscribers refreshed.");
+    })
   }, []);
 
   return (
     <div className="admin-dashboard">
-      <h2>Newsletter Subscribers</h2>
+      <h2 id="newsletter-title">Newsletter Subscribers</h2>
       <table>
         <thead>
           <tr>
