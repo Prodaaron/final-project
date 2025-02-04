@@ -35,9 +35,7 @@ router.post("/newsletter-subscribe", async (req, res) => {
 
 router.get("/subscribers", async (req, res) => {
   try {
-    console.log('hello');
-    const result = await pool.query("SELECT * FROM newsletter_subscription ORDER BY subscriber_id DESC");
-    console.log(result);
+    const result = await pool.query("SELECT * FROM newsletter_subscription ORDER BY subscriber_id ASC");
     res.status(200).json(result.rows);
   } catch (error) {
     console.error("Error fetching subscribers:", error);
