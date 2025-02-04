@@ -9,7 +9,6 @@ const adminDashboard = () => {
     const fetchSubscribers = async () => {
       try {
         const response = await axios.get("http://localhost:5000/subscribers");
-        console.log(response.data);
         setSubscribers(response.data);
       } catch (error) {
         console.error("Error fetching subscribers:", error);
