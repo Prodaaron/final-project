@@ -4,6 +4,7 @@ footer {
     flex-direction: column;
     padding: 0 20px;
     color: #21415a;
+    margin-top: 50px;
 }
 
 .footer-top {

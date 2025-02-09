@@ -72,7 +72,7 @@ const Footer = () => {
 
               <div className="basic-contact-info">
                 <p>Email: <a href="">support@mesarg.com</a></p>
-                <p>Phone: <a href="">+251 968 804 248</a></p>
+                <p>Phone: <a href="">+251 96 880 4248</a></p>
               </div>
 
               {/* Newsletter Subscription Form */}
