@@ -9,11 +9,6 @@ const about = () => {
         <p className="text-lg text-gray-700 mb-6">
           Welcome to <strong>MesArg</strong>, where beauty meets science, and nature blends with innovation. Our journey began with a simple yet powerful vision: to create high-quality, nourishing hair care products that elevate your confidence and transform your hair from root to tip.
         </p>
-        <img
-          src="/path-to-your/mesarg_branding.gif"
-          alt="MesArg Branding GIF"
-          className="w-full max-w-md mx-auto rounded-lg shadow-lg mb-6"
-        />
         <h2 className="text-2xl font-semibold text-gray-900 mb-3">Our Promise</h2>
         <p className="text-lg text-gray-700 mb-6">
           We stand for <strong>purity, performance, and sustainability</strong>. Our products are free from sulfates, parabens, and harsh chemicals—because we know that <strong>true beauty starts with clean, healthy hair</strong>. Committed to sustainability, we carefully source eco-friendly ingredients and use recyclable packaging, so your beauty routine can have a positive impact on the planet.

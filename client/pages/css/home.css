@@ -32,12 +32,23 @@
     background-position: center;
   }  
 
+.scroll-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;  
+  padding: 10px;
+} 
+
 .scroll-buttons button {
-  background-color: #0e2a3a;
+  /* background-color: #0e2a3a; */
   color: white;
   border: none;
-  height: 10px;
-  width: 12px;
+  height: 12px;
+  width: 6px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.active-button {
+  background-color: #1e3a5075;
 }
