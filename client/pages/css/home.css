@@ -31,3 +31,13 @@
     background-size: cover;
     background-position: center;
   }  
+
+.scroll-buttons button {
+  background-color: #0e2a3a;
+  color: white;
+  border: none;
+  height: 10px;
+  width: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}

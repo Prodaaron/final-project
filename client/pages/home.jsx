@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FirstSection from "../components/firstSection/firstSection";
 import SecondSection from "../components/secondSection/secondSection";
 import "./css/home.css";
+import IntroSection from "../components/IntroSection/introSection";
 
 const Home = () => {
   const [scrollIndex, setScrollIndex] = useState(0);
@@ -16,12 +17,22 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="scroll-container">
-      <div className="scroll-content" style={{ transform: `translateX(-${scrollIndex * 100}vw)` }}>
-        <FirstSection />
-        <SecondSection />
+    <>
+  
+      <div className="scroll-container">
+        <div className="scroll-content" style={{ transform: `translateX(-${scrollIndex * 100}vw)` }}>
+          <FirstSection />
+          <SecondSection />
+        </div>
       </div>
-    </div>
+
+      <div className="scroll-buttons">
+        <button className={scrollIndex === 0? "active-button" : ""} onClick={() => setScrollIndex(0)}></button>
+        <button className={scrollIndex === 1? "active-button" : ""} onClick={() => setScrollIndex(1)}></button>
+      </div>
+
+      <IntroSection />
+    </>
   );
 };
 
