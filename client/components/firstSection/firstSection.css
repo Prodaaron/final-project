@@ -1,0 +1,60 @@
+.first-section, .second-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    background-image: url(../../src/assets/images/thumbnails/thumbnail3.jpg);
+    background-size: contain;
+    background-position: center;
+    padding: 0 50px;
+}
+
+.first-section h2, .second-section h2 {
+    font-size: 36px;
+    margin: 0;
+    color: #fff;
+    filter: drop-shadow(0 0 10px #0e3c5f);
+}
+
+.first-section p, .second-section p {
+    font-size: 20px;
+    color: #fff;
+    margin: 0;
+    filter: drop-shadow(0 0 5px #0e3c5f);
+}
+
+
+.first-section a {
+    color: #fff;
+    background-color: #0e3c5f;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.first-section a:hover {
+    background-color: #1e4a6c;
+}
+
+.info-cont {
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(20px);
+    background-color: #00000075;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    border-radius: .8rem;
+}
+
+.second-section span {
+    margin-top: 10px;
+    color: rgb(78, 78, 78);
+    filter: drop-shadow(0 0 5px white);
+}

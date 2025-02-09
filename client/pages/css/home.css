@@ -1,0 +1,33 @@
+/* Scroll container (holds both sections) */
+.scroll-container {
+    display: flex;
+    width:99.4vw;
+    overflow-x: hidden; /* Hide scrollbar */
+    position: relative;
+    margin: 0;
+  }
+  
+  /* Scroll content that holds both sections side by side */
+  .scroll-content {
+    display: flex;
+    width: 200vw; /* Two sections horizontally */
+    transition: transform 1s ease; /* Smooth scrolling */
+  }
+  
+  /* First section with background image */
+  .first-section {
+    width: 100vw;
+    height: 80vh;
+    background-image: url('../../src/assets/images/thumbnails/thumbnail1.jpg'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Second section with another background image */
+  .second-section {
+    width: 100vw;
+    height: 80vh;
+    background-image: url('../../src/assets/images/thumbnails/thumbnail2.jpg'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+  }  

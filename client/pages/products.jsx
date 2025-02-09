@@ -37,7 +37,7 @@ const Products = () => {
             />
             <div className="product-info">
               <h3>{product.product_name}</h3>
-              <p>${product.product_price}</p>
+              <p>ETB {product.product_price}</p>
             </div>
           </div>
         ))}
@@ -50,7 +50,7 @@ const Products = () => {
             <button className="close-btn" onClick={() => setSelectedProduct(null)}>✖</button>
             <img src={selectedProduct.product_image} alt="Product" className="modal-img" />
             <h2>{selectedProduct.product_name}</h2>
-            <p><strong>Price:</strong> ${selectedProduct.product_price}</p>
+            <p><strong>Price:</strong> ETB {selectedProduct.product_price}</p>
             <p><strong>Description:</strong> {selectedProduct.product_description}</p>
 
             {/* Add to cart button */}
