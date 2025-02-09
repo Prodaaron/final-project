@@ -9,6 +9,7 @@ import AdminDashboard from "../pages/adminDashboard.jsx";
 import Signup from "../pages/signup.jsx";
 import Login from "../pages/login.jsx";
 import Footer from "../components/footer/footer.jsx";
+import HairCareChatbot from "../pages/HairCareChatbot";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -42,6 +43,8 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
       </Routes>
+
+      <HairCareChatbot />
 
       <Footer />
     </Router>
