@@ -4,7 +4,7 @@ const pool = require("../db/db.js"); // adjust path as needed
 const router = express.Router();
 
 
-router.get("/products", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM products ORDER BY product_id ASC');
         res.status(200).json(result.rows);
