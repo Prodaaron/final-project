@@ -99,3 +99,27 @@ h1 {
 .order-btn:hover {
     background-color: #1e3a50;
 }
+
+@media screen and (max-width: 768px) {
+    .product-container {
+        width: 48%;
+    } 
+
+    .product-container:hover {
+        width: 50%;
+    }
+
+    .product-container:active {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product-list {
+        flex-direction: column;
+    }
+
+    .product-container {
+        width: 100%;
+    }
+}

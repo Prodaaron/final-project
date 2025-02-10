@@ -1,6 +1,7 @@
 .intro-section {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 10px;
 }
 
@@ -47,4 +48,16 @@
 /* Optional: Change image opacity on hover */
 .image-container:hover .intro-image {
     opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+    .intro-item {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .intro-item {
+        width: 100%;
+    }
 }

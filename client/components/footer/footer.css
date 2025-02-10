@@ -151,5 +151,15 @@ footer hr {
 
     .footer-bottom {
         font-size: .8rem;
+        align-items: center;
+    }
+
+    .social-media-footer {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .basic-contact-info {
+        text-align: center;
     }
 }

@@ -1,3 +1,2 @@
-** Known Problems **
-- 1. backend not fetching the products end point
-"Important!"
+** Reminder **
+- Add responsiveness to components that dont have responsiveness
