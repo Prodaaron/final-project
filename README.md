@@ -99,6 +99,6 @@
 - 3 - enter 'npm install' to install all dependencies for the project
 - 4 - enter 'npm run dev' to run on one device and 'npm run dev -- --host' to host globally across any device in the same network.
 
-
+* EXTRA: For using the AI Chatbot you will have to create a .env file in the frontend folder (client folder) and configure your openAI account with the project and adjust the code accordingly.
 
 
